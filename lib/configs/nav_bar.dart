@@ -17,7 +17,6 @@ class NavBar extends StatelessWidget {
     return BottomAppBar(
       elevation: 0.0,
       child: ClipRRect(
-        // borderRadius: BorderRadius.circular(10),
         child: Container(
           decoration: const BoxDecoration(
             color: Colors.black,
@@ -31,14 +30,12 @@ class NavBar extends StatelessWidget {
               navItem(
                 '홈',
                 imageFileLoc: CommonAssets.home,
-                // Icons.home_filled,
                 pageIndex == 0,
                 onTap: () => onTap(0),
               ),
               navItem(
                 '스팟',
                 imageFileLoc: CommonAssets.location,
-                // Icons.location_on_outlined,
                 pageIndex == 1,
                 onTap: () => onTap(1),
               ),
@@ -46,14 +43,12 @@ class NavBar extends StatelessWidget {
               navItem(
                 '채팅',
                 imageFileLoc: CommonAssets.message,
-                // Icons.message,
                 pageIndex == 2,
                 onTap: () => onTap(2),
               ),
               navItem(
                 '마이',
                 imageFileLoc: CommonAssets.user,
-                // Icons.person_2_outlined,
                 pageIndex == 3,
                 onTap: () => onTap(3),
               ),
@@ -65,7 +60,6 @@ class NavBar extends StatelessWidget {
   }
 
   Widget navItem(
-    // IconData icon,
     String text,
     bool selected, {
     required String imageFileLoc,
@@ -77,12 +71,6 @@ class NavBar extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Icon(
-            //   icon,
-            //   color: selected
-            //       ? CustomTheme.appColor
-            //       : Colors.white.withOpacity(0.4),
-            // ),
             ImageIcon(
               AssetImage(imageFileLoc),
               color: selected

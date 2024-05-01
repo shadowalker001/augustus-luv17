@@ -1,7 +1,3 @@
-import 'dart:io';
-
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:luvit/configs/size_config.dart';
 import 'package:luvit/configs/theme.dart';
@@ -48,70 +44,6 @@ class UiWidgets {
             color: CustomTheme.gradient[0],
           ),
         ),
-      ),
-    );
-  }
-
-  static Widget catchedImage(
-    CustomTheme theme,
-    String url,
-  ) {
-    return CachedNetworkImage(
-      // height: double.infinity,
-      // width: double.infinity,
-      imageUrl: url,
-      fit: BoxFit.cover,
-      progressIndicatorBuilder: (context, url, progress) => Container(
-        alignment: Alignment.center,
-        height: textMultiplier * 6,
-        width: textMultiplier * 6,
-        child: Platform.isIOS
-            ? CupertinoActivityIndicator(
-                color: theme.mainAlt,
-              )
-            : CircularProgressIndicator(
-                color: theme.main,
-                backgroundColor: theme.mainAlt,
-                value: progress.progress,
-              ),
-      ),
-      filterQuality: FilterQuality.none,
-      errorWidget: (context, url, error) => Icon(
-        Icons.error,
-        size: textMultiplier * 5,
-        color: Colors.red,
-      ),
-    );
-  }
-
-  static Widget catchedImageV2(
-    CustomTheme theme,
-    String url,
-  ) {
-    return CachedNetworkImage(
-      height: double.infinity,
-      width: double.infinity,
-      imageUrl: url,
-      fit: BoxFit.cover,
-      filterQuality: FilterQuality.none,
-      progressIndicatorBuilder: (context, url, progress) => Container(
-        alignment: Alignment.center,
-        height: textMultiplier * 6,
-        width: textMultiplier * 6,
-        child: Platform.isIOS
-            ? CupertinoActivityIndicator(
-                color: theme.mainAlt,
-              )
-            : CircularProgressIndicator(
-                color: theme.main,
-                backgroundColor: theme.mainAlt,
-                value: progress.progress,
-              ),
-      ),
-      errorWidget: (context, url, error) => Icon(
-        Icons.error,
-        size: textMultiplier * 5,
-        color: Colors.red,
       ),
     );
   }
